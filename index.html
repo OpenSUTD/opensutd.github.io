@@ -15,21 +15,23 @@
     </head>
     <body>
         <!-- Scroll Up Button -->
-        <form action="#home">
+        <form action="#top">
             <button id="toTop" title="Go to top">
-                <i class="fas fa-angle-up"></i>
+                <i class="fa fa-angle-up"></i>
             </button>
         </form>
 
         <!-- Header -->
-        <div class="header-wrapper" id="particles-js">
-            <script src="assets/js/particles.js"></script>
-            <script src="assets/js/app.js"></script>
-            <div class="hero is-large has-text-centered">
-                <h1 class="subtitle">What is</h1>
-                <h2 class="title">OpenSUTD?</h2>
-                <h1 class="description">This is our story.</h1>  
-            </div>
+        <div class="header-wrapper" id="top">
+            <section class="hero is-large">
+                <div class="hero-body">
+                    <div class="container has-text-centered">
+                        <h1 class="subtitle">What is</h1>
+                        <h2 class="title">OpenSUTD?</h2>
+                        <h1 class="description">This is our story.</h1>  
+                    </div>
+                </div>
+            </section>
         </div>
 
         <!-- Main Content -->
@@ -183,28 +185,22 @@
 
                             <div id="graph-container-tlkh"></div>
                             <script>
-
-                                var graphContainer = document.getElementById("graph-container-tlkh");
-
-
-                                var gitgraph = GitgraphJS.createGitgraph(graphContainer, {
-                                    mode: 'extended',
-                                    author: "Timothy Liu <timothy_liu@mymail.sutd.edu.sg>",
-                                });
-
-
-                                var master = gitgraph.branch("master");
-                                master.commit("Achieve winstreak in hackathons");
-
-                                var develop = gitgraph.branch("develop");
-                                develop.commit("Master environment deployment");
-
-                                develop.commit("Specialize in machine learning");
-
-                                master.merge(develop);
-
-                                graphContainer.style.transform = "scale(0.7, 0.7) translate(-25%, -10%)";
-                            </script>   
+                                var width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+                                if (width > 870) {
+                                    var graphContainer = document.getElementById("graph-container-tlkh");
+                                    var gitgraph = GitgraphJS.createGitgraph(graphContainer, {
+                                        mode: 'extended',
+                                        author: "Timothy Liu <timothy_liu@mymail.sutd.edu.sg>",
+                                    });
+                                    var master = gitgraph.branch("master");
+                                    master.commit("Achieve winstreak in hackathons");
+                                    var develop = gitgraph.branch("develop");
+                                    develop.commit("Master environment deployment");
+                                    develop.commit("Specialize in machine learning");
+                                    master.merge(develop);
+                                    graphContainer.style.transform = "scale(0.7, 0.7) translate(-25%, -10%)";
+                                }
+                            </script>
                         </div>
                         <div class="column is-4 right-image" data-aos="fade-left">
                             <img
@@ -316,27 +312,21 @@
 
                             <div id="graph-container-Yustynn"></div>
                             <script>
-
-                                var graphContainer = document.getElementById("graph-container-Yustynn");
-
-
-                                var gitgraph = GitgraphJS.createGitgraph(graphContainer, {
-                                    mode: 'extended',
-                                    author: "Yustynn Panicker <Yustynn_Panicker@mymail.sutd.edu.sg>",
-                                });
-
-
-                                var master = gitgraph.branch("master");
-                                master.commit("Also won a lot of hackathons");
-
-                                var develop = gitgraph.branch("develop");
-                                develop.commit("Learned a ridiculous amount of frameworks and languages");
-
-                                develop.commit("Specialize in data analytics");
-
-                                master.merge(develop);
-
-                                graphContainer.style.transform = "scale(0.7, 0.7) translate(-25%, -10%)";
+                                var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+                                if (width > 870) {
+                                    var graphContainer = document.getElementById("graph-container-Yustynn");
+                                    var gitgraph = GitgraphJS.createGitgraph(graphContainer, {
+                                        mode: 'extended',
+                                        author: "Yustynn Panicker <Yustynn_Panicker@mymail.sutd.edu.sg>",
+                                    });
+                                    var master = gitgraph.branch("master");
+                                    master.commit("Also won a lot of hackathons");
+                                    var develop = gitgraph.branch("develop");
+                                    develop.commit("Learned a ridiculous amount of frameworks and languages");
+                                    develop.commit("Specialize in data analytics");
+                                    master.merge(develop);
+                                    graphContainer.style.transform = "scale(0.7, 0.7) translate(-25%, -10%)";
+                                }
                             </script>   
                         </div>
                         <div class="column is-3 right-image" data-aos="fade-left">
@@ -349,7 +339,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="section-dark profile" id="profile">
                 <div class="container">
                     <div class="column is-12 about-me">
@@ -403,7 +393,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="section-light profile" id="profile">
                 <div class="container">
                     <div class="column is-12 about-me">
@@ -473,7 +463,7 @@
                         <a href="https://github.com/dansup/bulma-templates">
                             <div class="tags has-addons">
                                 <span class="tag is-dark">Bulma Templates</span>
-                                <span class="tag is-info">MIT license</span>
+                                <span class="tag is-info">MIT License</span>
                             </div>
                         </a>
                     </div>
@@ -481,8 +471,8 @@
             </div>
 
             <!-- Scripts -->
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
             <script src="assets/js/main.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
             <link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
             <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
             <script>

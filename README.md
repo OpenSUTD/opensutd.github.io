@@ -2,6 +2,5 @@
 This repository houses the prototype of [OpenSUTD](https://opensutd.org/)'s about page.
 
 ## TODO
-- Fix the interaction between ```particles-js``` and the alignment of ```header-wrapper``` without ```padding-top``` and ```padding-bottom```.
-- Centralize the OpenSUTD logo on small ```device-width```.
+- Make the git graphs change live with `window.onload` and `window.onresize` without duplicating itself.
 - Add more content.
