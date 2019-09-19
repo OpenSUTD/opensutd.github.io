@@ -74,6 +74,107 @@
                                     </p>
                                 </div>
                             </div>
+                            <div id="graph-container-main"></div>
+                            <script>
+                                var width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+                                if (width > 660) {
+                                    var mode = "extended";
+                                }
+                                else {
+                                    var mode = "compact";
+                                }
+                                var graphContainer = document.getElementById("graph-container-main");
+                                var customTemplate = GitgraphJS.templateExtend(GitgraphJS.TemplateName.Metro, {
+                                    colors: ['#000000', '#CF0000', '#6963FF', '#47E8D4', "#6BDB52", "#E84BA5", "#FFA657"],
+                                    commit: {
+                                        message: {
+                                            displayAuthor: false,
+                                        },
+                                    },
+                                });
+                                var gitgraph = GitgraphJS.createGitgraph(graphContainer, {
+                                    template: customTemplate,
+                                    mode: mode,
+                                    orientation: 'vertical-reverse',
+                                });
+                                var OpenSUTD = gitgraph.branch("OpenSUTD");
+                                OpenSUTD
+                                    .commit("Init Joel's OpenSUTD GitHub prototype")
+                                    .commit("Conduct OpenSUTD workshops");
+                                var course_notes = gitgraph.branch({
+                                    name: "course_notes",
+                                    from: OpenSUTD,
+                                });
+                                course_notes.commit({
+                                    subject: "Publish student-curated academic notes",
+                                    onClick(commit) {
+                                        window.open("https://github.com/OpenSUTD/course-notes");
+                                    },
+                                    onMouseOver(commit) {
+                                        document.body.style.cursor = "pointer";
+                                    },
+                                    onMouseOut(commit) {
+                                        document.body.style.cursor = "default";
+                                    },
+                                });
+                                OpenSUTD.commit("Establish open regulation and democracy of knowledge");
+                                var SAC = gitgraph.branch({
+                                    name: "SAC",
+                                    from: OpenSUTD,
+                                });
+                                var DiscoverSUTD = gitgraph.branch({
+                                    name: "DiscoverSUTD",
+                                    from: OpenSUTD,
+                                });
+                                var PeoplePage = gitgraph.branch({
+                                    name: "People-Page",
+                                    from: OpenSUTD,
+                                });
+                                course_notes.commit({
+                                    subject: "Publish coding notes",
+                                    onClick(commit) {
+                                        window.open("https://github.com/OpenSUTD/coding-notes");
+                                    },
+                                    onMouseOver(commit) {
+                                        document.body.style.cursor = "pointer";
+                                    },
+                                    onMouseOut(commit) {
+                                        document.body.style.cursor = "default";
+                                    },
+                                });
+                                OpenSUTD.merge(course_notes);
+                                SAC.commit({
+                                    subject: "Publish SAC usage policy documents",
+                                    onClick(commit) {
+                                        window.open("https://github.com/OpenSUTD/SAC-student-rules");
+                                    },
+                                    onMouseOver(commit) {
+                                        document.body.style.cursor = "pointer";
+                                    },
+                                    onMouseOut(commit) {
+                                        document.body.style.cursor = "default";
+                                    },
+                                });
+                                OpenSUTD.merge(SAC);
+                                DiscoverSUTD.commit("Init DiscoverSUTD");
+                                DiscoverSUTD.tag("Discovery Week");
+                                DiscoverSUTD.commit({
+                                    subject: "Execute DiscoverSUTD 2019",
+                                    onClick(commit) {
+                                        window.open("https://discover.sutd.dev/");
+                                    },
+                                    onMouseOver(commit) {
+                                        document.body.style.cursor = "pointer";
+                                    },
+                                    onMouseOut(commit) {
+                                        document.body.style.cursor = "default";
+                                    },
+                                });
+                                OpenSUTD.merge(DiscoverSUTD);
+                                PeoplePage.commit("Create OpenSUTD People Page");
+                                OpenSUTD.merge(PeoplePage);
+                                graphContainer.style.transform = "scale(0.85, 0.85) translate(-8%, 10%)";
+                            </script>
                         </div>
                         <div class="column is-6 right-image" data-aos="fade-left">
                             <img
@@ -186,9 +287,18 @@
                             <div id="graph-container-tlkh"></div>
                             <script>
                                 var width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-                                if (width > 870) {
+                                if (width > 470) {
                                     var graphContainer = document.getElementById("graph-container-tlkh");
+                                    var customTemplate = GitgraphJS.templateExtend(GitgraphJS.TemplateName.Metro, {
+                                        colors: ['#000000','#CF0000'],
+                                        commit: {
+                                            message: {
+                                                displayAuthor: false,
+                                            },
+                                        },
+                                    });
                                     var gitgraph = GitgraphJS.createGitgraph(graphContainer, {
+                                        template: customTemplate,
                                         mode: 'extended',
                                         author: "Timothy Liu <timothy_liu@mymail.sutd.edu.sg>",
                                     });
@@ -198,7 +308,7 @@
                                     develop.commit("Master environment deployment");
                                     develop.commit("Specialize in machine learning");
                                     master.merge(develop);
-                                    graphContainer.style.transform = "scale(0.7, 0.7) translate(-25%, -10%)";
+                                    graphContainer.style.transform = "scale(0.8, 0.8) translate(-15%, -10%)";
                                 }
                             </script>
                         </div>
@@ -313,9 +423,18 @@
                             <div id="graph-container-Yustynn"></div>
                             <script>
                                 var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
-                                if (width > 870) {
+                                if (width > 565) {
                                     var graphContainer = document.getElementById("graph-container-Yustynn");
+                                    var customTemplate = GitgraphJS.templateExtend(GitgraphJS.TemplateName.Metro, {
+                                        colors: ['#000000','#CF0000'],
+                                        commit: {
+                                            message: {
+                                                displayAuthor: false,
+                                            },
+                                        },
+                                    });
                                     var gitgraph = GitgraphJS.createGitgraph(graphContainer, {
+                                        template: customTemplate,
                                         mode: 'extended',
                                         author: "Yustynn Panicker <Yustynn_Panicker@mymail.sutd.edu.sg>",
                                     });
@@ -325,7 +444,7 @@
                                     develop.commit("Learned a ridiculous amount of frameworks and languages");
                                     develop.commit("Specialize in data analytics");
                                     master.merge(develop);
-                                    graphContainer.style.transform = "scale(0.7, 0.7) translate(-25%, -10%)";
+                                    graphContainer.style.transform = "scale(0.8, 0.8) translate(-15%, -10%)";
                                 }
                             </script>   
                         </div>
