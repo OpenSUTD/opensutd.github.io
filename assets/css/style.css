@@ -156,6 +156,7 @@ html {
 #toTop {
     height: 50px;
     width: 50px;
+    display: none;
     position: fixed;
     bottom: 20px;
     right: 30px;
