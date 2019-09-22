@@ -116,8 +116,8 @@ html {
 }
 
 .main-content .section-dark.profile .left-image img {
-    border-radius: 11px;
-    margin: 20px;
+    border-radius: 1px;
+    margin: 1px;
     box-shadow: 0 5px 20px rgba(14, 25, 80, 0.3);
 }
 
