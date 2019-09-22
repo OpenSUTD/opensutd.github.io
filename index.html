@@ -7,11 +7,14 @@
         <link rel="shortcut icon" href="images/favicon.ico">
         <title>OpenSUTD - People Page</title>
         <meta name="description" content="This is our story." />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css" integrity="sha256-vK3UTo/8wHbaUn+dTQD0X6dzidqc5l7gczvH+Bnowwk=" crossorigin="anonymous" />
+        <link rel="stylesheet" href="assets/css/bulma.min.css" integrity="sha256-vK3UTo/8wHbaUn+dTQD0X6dzidqc5l7gczvH+Bnowwk=" crossorigin="anonymous" />
         <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
         <link rel="stylesheet" href="assets/css/font-awesome-animation.min.css">
-        <script src="https://kit.fontawesome.com/2828f7885a.js" integrity="sha384-WAsFbnLEQcpCk8lM1UTWesAf5rGTCvb2Y+8LvyjAAcxK1c3s5c0L+SYOgxvc6PWG" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@gitgraph/js"></script>
+        <script src="assets/js/2828f7885a.js" integrity="sha384-WAsFbnLEQcpCk8lM1UTWesAf5rGTCvb2Y+8LvyjAAcxK1c3s5c0L+SYOgxvc6PWG" crossorigin="anonymous"></script>
+        <noscript>
+            <link rel="stylesheet" href="assets/css/fontawesome.min.css">
+        </noscript>
+        <script src="assets/js/gitgraph.js"></script> 
     </head>
     <body>
         <!-- Scroll Up Button -->
@@ -85,14 +88,12 @@
                                 }
 
                                 async function createGitgraph(){
-                                    // creates gitgraph based on window size
                                     try{
                                         var graphContainer = document.getElementById(gitgraphID);
                                         var customTemplate = GitgraphJS.templateExtend(GitgraphJS.TemplateName.Metro, {
                                             colors: ['#000000', '#CF0000', '#6963FF', '#47E8D4', "#6BDB52", "#E84BA5", "#FFA657"],
                                             commit: {
                                                 message: {
-                                                
                                                     displayAuthor: false,
                                                     displayHash: false,
                                                 },
@@ -186,7 +187,6 @@
                                 }
 
                                 async function deleteGitgraph(){
-                                    // deletes gitgraph by deleting all child elements of div with the id "graph-container-main"
                                     try{
                                         oldGitgraph = document.getElementById(gitgraphID);
                                         while (oldGitgraph.firstChild){
@@ -202,7 +202,7 @@
                                         console.log("checkForResize triggered");
                                         let newMode = "extended";
                                         width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-                                        
+
                                         if (width <= 660) {
                                             newMode = "compact";
                                         }
@@ -210,9 +210,7 @@
                                         console.log(`width: ${width}; mode: ${mode}; newMode: ${newMode}`);
 
                                         if (newMode !== mode){
-                                            // only recreate gitgraph when there are changes to mode
                                             if (newMode === "compact"){
-                                                // this is done cos deep copying of newMode onto mode is kinda tricky for js (so i got lazy heh)
                                                 mode = "compact";
                                             } else{
                                                 mode = "extended";
@@ -226,7 +224,7 @@
                                 }
 
                                 createGitgraph();
-                                window.onresize = checkForResize;  //inbuilt listener for resizing of window
+                                window.onresize = checkForResize;
                             </script>
                         </div>
                         <div class="column is-6 right-image" data-aos="fade-left">
@@ -336,6 +334,7 @@
                                     </p>
                                 </div>
                             </div>
+                            <br />
 
                             <div id="graph-container-tlkh"></div>
                             <script>
@@ -347,6 +346,7 @@
                                         commit: {
                                             message: {
                                                 displayAuthor: false,
+                                                displayHash: false,
                                             },
                                         },
                                     });
@@ -354,6 +354,7 @@
                                         template: customTemplate,
                                         mode: 'extended',
                                         author: "Timothy Liu <timothy_liu@mymail.sutd.edu.sg>",
+                                        orientation: 'vertical-reverse',
                                     });
                                     var master = gitgraph.branch("master");
                                     master.commit("Achieve winstreak in hackathons");
@@ -365,7 +366,7 @@
                                 }
                             </script>
                         </div>
-                        <div class="column is-4 right-image" data-aos="fade-left">
+                        <div class="column is-6 right-image" data-aos="fade-left">
                             <img
                                  class="is-rounded"
                                  src="https://github.com/tlkh.png"
@@ -472,10 +473,11 @@
                                     </p>
                                 </div>
                             </div>
+                            <br />
 
                             <div id="graph-container-Yustynn"></div>
                             <script>
-                                width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+                                width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
                                 if (width > 565) {
                                     var graphContainer = document.getElementById("graph-container-Yustynn");
                                     var customTemplate = GitgraphJS.templateExtend(GitgraphJS.TemplateName.Metro, {
@@ -483,6 +485,7 @@
                                         commit: {
                                             message: {
                                                 displayAuthor: false,
+                                                displayHash: false,
                                             },
                                         },
                                     });
@@ -490,18 +493,19 @@
                                         template: customTemplate,
                                         mode: 'extended',
                                         author: "Yustynn Panicker <Yustynn_Panicker@mymail.sutd.edu.sg>",
+                                        orientation: 'vertical-reverse',
                                     });
                                     var master = gitgraph.branch("master");
                                     master.commit("Also won a lot of hackathons");
                                     var develop = gitgraph.branch("develop");
-                                    develop.commit("Learned a ridiculous amount of frameworks and languages");
+                                    develop.commit("Learned a ridiculous amount of technologies");
                                     develop.commit("Specialize in data analytics");
                                     master.merge(develop);
                                     graphContainer.style.transform = "scale(0.8, 0.8) translate(-15%, -10%)";
                                 }
                             </script>   
                         </div>
-                        <div class="column is-3 right-image" data-aos="fade-left">
+                        <div class="column is-6 right-image" data-aos="fade-left">
                             <img
                                  class="is-rounded"
                                  src="https://github.com/Yustynn.png"
@@ -620,7 +624,20 @@
                 </div>
             </div>
         </div>
-
+        <noscript>
+            <style type="text/css">
+                .main-content {display:none;}
+            </style>
+            <div class="section-light profile" id="profile">
+                <div class="container">
+                    <div class="column is-12 about-me">
+                        <h1 class="title has-text-centered section-title">...And you won't know our story since you disabled JavaScript. A fascinating chap, aren't you? Trust me, you wouldn't want to miss the fun. 😉</h1>
+                    </div>
+                    <br />
+                    <br />
+                </div>
+            </div>
+        </noscript>
 
         <!-- Footer -->
         <footer class="footer">
@@ -628,7 +645,7 @@
                 <div class="content has-text-centered">
                     <p>
                         <a class="icon" href="https://github.com/jamestiotio/OpenSUTD-People-Page">
-                            <i class="fab fa-github"></i>
+                            <i class="fab fa-github fa-lg"></i>
                         </a>
                     </p>
                     <div class="control level-item">
@@ -643,10 +660,10 @@
             </div>
 
             <!-- Scripts -->
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+            <script src="assets/js/jquery.min.js"></script>
             <script src="assets/js/main.js"></script>
-            <link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
-            <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
+            <link href="assets/css/aos.css" rel="stylesheet">
+            <script src="assets/js/aos.js"></script>
             <script>
                 AOS.init({
                     easing: "ease-out",
