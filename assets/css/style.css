@@ -66,6 +66,15 @@ html {
     padding: 30px;
 }
 
+.main-content .section-dark.profile {
+    padding-bottom: 100px;
+}
+
+.main-content .section-dark.profile .is-larger {
+    font-size: 1.2rem;
+    text-align: justify;
+}
+
 .main-content .section-light {
     padding: 30px;
 }
@@ -104,6 +113,12 @@ html {
         margin-right: auto;
         width: 85%;
     }
+}
+
+.main-content .section-dark.profile .left-image img {
+    border-radius: 11px;
+    margin: 20px;
+    box-shadow: 0 5px 20px rgba(14, 25, 80, 0.3);
 }
 
 @media (max-width: 599px) {
