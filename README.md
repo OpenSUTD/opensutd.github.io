@@ -3,4 +3,5 @@ This repository houses the prototype of [OpenSUTD](https://opensutd.org/)'s abou
 
 ## TODO
 - Make **all** git graphs responsive.
+- Make clickable commit dots different visually.
 - Add more content.
