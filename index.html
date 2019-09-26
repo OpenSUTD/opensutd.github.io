@@ -107,14 +107,12 @@
                                         });
                                         var OpenSUTD = gitgraph.branch("OpenSUTD");
                                         OpenSUTD
-                                            .commit("Init Joel's OpenSUTD GitHub prototype")
-                                            .commit("Conduct OpenSUTD workshops");
-                                        var course_notes = gitgraph.branch({
-                                            name: "course_notes",
-                                            from: OpenSUTD,
-                                        });
-                                        course_notes.commit({
-                                            subject: "Publish student-curated academic notes",
+                                            .commit("Joel's GitHub prototype")
+                                            .commit("OpenSUTD workshops");
+                                        OpenSUTD.commit("Establish knowledge democracy");
+                                        OpenSUTD.tag("Community Docs");
+                                        OpenSUTD.commit({
+                                            subject: "Academic notes",
                                             onClick(commit) {
                                                 window.open("https://github.com/OpenSUTD/course-notes");
                                             },
@@ -125,20 +123,40 @@
                                                 document.body.style.cursor = "default";
                                             },
                                         });
-                                        OpenSUTD.commit("Establish open regulation and democracy of knowledge");
-                                        var SAC = gitgraph.branch({
-                                            name: "SAC",
+                                        OpenSUTD.commit({
+                                            subject: "SAC policy documents",
+                                            onClick(commit) {
+                                                window.open("https://github.com/OpenSUTD/SAC-student-rules");
+                                            },
+                                            onMouseOver(commit) {
+                                                document.body.style.cursor = "pointer";
+                                            },
+                                            onMouseOut(commit) {
+                                                document.body.style.cursor = "default";
+                                            },
+                                        });
+                                        OpenSUTD.commit({
+                                            subject: "Publish Fifth Row guides",
+                                            onClick(commit) {
+                                                window.open("https://github.com/OpenSUTD/fifth-row-guides");
+                                            },
+                                            onMouseOver(commit) {
+                                                document.body.style.cursor = "pointer";
+                                            },
+                                            onMouseOut(commit) {
+                                                document.body.style.cursor = "default";
+                                            },
+                                        });
+                                        OpenSUTD.commit("Establish open regulation");
+                                        var Web_Artefacts = gitgraph.branch({
+                                            name: "Web Artefacts",
                                             from: OpenSUTD,
                                         });
-                                        var DiscoverSUTD = gitgraph.branch({
-                                            name: "DiscoverSUTD",
+                                        var Events = gitgraph.branch({
+                                            name: "Events",
                                             from: OpenSUTD,
                                         });
-                                        var PeoplePage = gitgraph.branch({
-                                            name: "People-Page",
-                                            from: OpenSUTD,
-                                        });
-                                        course_notes.commit({
+                                        OpenSUTD.commit({
                                             subject: "Publish coding notes",
                                             onClick(commit) {
                                                 window.open("https://github.com/OpenSUTD/coding-notes");
@@ -150,24 +168,8 @@
                                                 document.body.style.cursor = "default";
                                             },
                                         });
-                                        OpenSUTD.merge(course_notes);
-                                        SAC.commit({
-                                            subject: "Publish SAC usage policy documents",
-                                            onClick(commit) {
-                                                window.open("https://github.com/OpenSUTD/SAC-student-rules");
-                                            },
-                                            onMouseOver(commit) {
-                                                document.body.style.cursor = "pointer";
-                                            },
-                                            onMouseOut(commit) {
-                                                document.body.style.cursor = "default";
-                                            },
-                                        });
-                                        OpenSUTD.merge(SAC);
-                                        DiscoverSUTD.commit("Init DiscoverSUTD");
-                                        DiscoverSUTD.tag("Discovery Week");
-                                        DiscoverSUTD.commit({
-                                            subject: "Execute DiscoverSUTD 2019",
+                                        Events.commit({
+                                            subject: "DiscoverSUTD 2019",
                                             onClick(commit) {
                                                 window.open("https://discover.sutd.dev/");
                                             },
@@ -178,9 +180,23 @@
                                                 document.body.style.cursor = "default";
                                             },
                                         });
-                                        OpenSUTD.merge(DiscoverSUTD);
-                                        PeoplePage.commit("Create OpenSUTD People Page");
-                                        OpenSUTD.merge(PeoplePage);
+                                        Events.tag("Discovery Week");
+                                        Events.commit({
+                                            subject: "SUTD Unfiltered 2019",
+                                            onClick(commit) {
+                                                window.open("https://unfiltered.opensutd.org/");
+                                            },
+                                            onMouseOver(commit) {
+                                                document.body.style.cursor = "pointer";
+                                            },
+                                            onMouseOut(commit) {
+                                                document.body.style.cursor = "default";
+                                            },
+                                        });
+                                        Web_Artefacts.commit("SUTD Calendar");
+                                        Web_Artefacts.commit("People Page");
+                                        OpenSUTD.merge(Web_Artefacts);
+                                        OpenSUTD.merge(Events);
                                         graphContainer.style.transform = "scale(0.85, 0.85) translate(-8%, 10%)";
                                     } catch(e){
                                         console.log(e);
