@@ -8,13 +8,12 @@
         <link rel="shortcut icon" href="images/favicon.ico">
         <title>OpenSUTD - People Page</title>
         <meta name="description" content="This is our story." />
-        <link rel="stylesheet" href="assets/css/bulma.min.css" integrity="sha256-vK3UTo/8wHbaUn+dTQD0X6dzidqc5l7gczvH+Bnowwk=" crossorigin="anonymous" />
+        <!-- <link rel="stylesheet" href="assets/css/bulma.min.css" integrity="sha256-vK3UTo/8wHbaUn+dTQD0X6dzidqc5l7gczvH+Bnowwk=" crossorigin="anonymous" /> -->
+        <link rel="stylesheet" href="assets/css/bulma.min.css" />
         <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
         <link rel="stylesheet" href="assets/css/font-awesome-animation.min.css">
         <script src="assets/js/2828f7885a.js" integrity="sha384-WAsFbnLEQcpCk8lM1UTWesAf5rGTCvb2Y+8LvyjAAcxK1c3s5c0L+SYOgxvc6PWG" crossorigin="anonymous"></script>
-        <noscript>
-            <link rel="stylesheet" href="assets/css/fontawesome.min.css">
-        </noscript>
+        <link rel="stylesheet" href="assets/css/fontawesome.min.css">
         <script src="assets/js/gitgraph.js"></script> 
     </head>
     <body>
@@ -39,7 +38,33 @@
         </div>
 
         <!-- Main Content -->
+        <div class="hero-head">
+            <nav class="navbar is-fixed-top">
+                <div class="container">
+                    <div class="navbar-brand is-centered">
+                        <span class="navbar-burger burger" data-target="navbarMenu">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </span>
+                    </div>
+                    <div id="navbarMenu" class="navbar-menu">
+                        <div class="navbar-end" style="margin: auto">
+                            <div class="tabs is-centered">
+                                <ul>
+                                    <li class="is-active"><a href="#home">Home</a></li>
+                                    <li><a href="#events">Events</a></li>
+                                    <li><a href="#resources">Resources</a></li>
+                                    <li><a href="#team">Team</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
         <div class="main-content">
+            <a class="anchor" id="home"></a>
             <div class="section-light profile" id="profile">
                 <div class="container">
                     <div class="column is-12 about-me">
@@ -254,8 +279,63 @@
                     </div>
                 </div>
             </div>
+            <div class="section-dark profile">
+                <a class="anchor" name="events" id="events"> </a>
+                <div class="container">
+                    <div class="column is-12 about-me">
+                        <h1 class="title has-text-centered section-title">EVENTS</h1>
+                    </div>
+                    <div class="columns is-multiline">
+                        <div class="column is-6" data-aos="fade-right" style="text-align: center">
+                            <a href="https://unfiltered.opensutd.org/" target="_blank">
+                                <img src="images/sutd_unfiltered_logo.jpg" style="width:250px; height:120px;"/>
+                            </a>
+                        </div>
+                        <div class="column is-6" data-aos="fade-left" style="text-align: center">
+                            <a href="https://discover.sutd.dev/" target="_blank">
+                                <img src="images/discover_sutd_logo.png" style="width:250px; height:120px;"/>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="section-light profile">
+                <a class="anchor" id="resources"></a>
+                <div class="container">
+                    <div class="column is-12">
+                        <h1 class="title has-text-centered section-title">RESOURCES</h1>
+                    </div>
+                    <div class="columns is-multiline">
+                        <div class="column is-3.5 resource-div" data-aos="fade-right">
+                            <p class="title has-text-centered resource-title"><i class="fas fa-book" style="color:#93530A;"></i> Guides</p>
+                            <ul style="margin-left:2em; list-style-type: circle;">
+                                <li><a href="https://github.com/OpenSUTD/SAC-student-rules" target="_blank">SAC Student Rules</a></li>
+                                <li><a href="https://github.com/OpenSUTD/fifth-row-guides" target="_blank">Fifth Row Guide</a></li>
+                            </ul>
+                        </div>
+                        <div class="column is-3.5 resource-div" data-aos="fade-right">
+                            <p class="title has-text-centered resource-title"><i class="fas fa-pencil-alt" style="color:#E81612"></i> Notes</p>
+                            <ul style="margin-left:2em; list-style-type: circle;">
+                                <li><a href="https://github.com/OpenSUTD/course-notes" target="_blank">SUTD Course Notes</a></li>
+                                <li><a href="https://github.com/OpenSUTD/coding-notes" target="_blank">MethylDragon's Coding Notes</a></li>
+                                <li><a href="https://github.com/OpenSUTD/programming_notes" target="_blank">PengFei's Programming Notes</a></li>
+                            </ul>
+                        </div>
+                        <div class="column is-3.5 resource-div" data-aos="fade-right">
+                            <p class="title has-text-centered resource-title"><i class="fas fa-wrench" style="color:#2272A5"></i> Workshops</p>
+                            <ul style="margin-left:2em; list-style-type: circle;">
+                                <li><a href="https://github.com/OpenSUTD/deeplearning-workshop-2019" target="_blank">Deep Learning Workshop</a></li>
+                                <li><a href="https://github.com/OpenSUTD/machine-learning-workshop" target="_blank">Machine Learning Workshop</a></li>
+                                <li><a href="https://github.com/OpenSUTD/Code4GreaterGood" target="_blank">Code 4 Greater Good</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
+            <!-- sac student rules, course-notes, programming notes, coding notes -->
             <div class="section-dark profile" id="profile">
+                <a class="anchor" id="team"></a>
                 <div class="container">
                     <div class="column is-12 about-me">
                         <h1 class="title has-text-centered section-title">Hum Qing Ze</h1>
@@ -273,9 +353,7 @@
                              data-aos="fade-left"
                              >
                             <p class="is-larger">
-                                <strong
-                                        >Qing Ze is one of our main contributors.</strong
-                                    >
+                                <strong>Qing Ze is one of our main contributors.</strong>
                             </p>
                             <br />
                             <p>
@@ -676,17 +754,18 @@
                     </div>
                 </div>
             </div>
+        </footer>
 
-            <!-- Scripts -->
-            <script src="assets/js/jquery.min.js"></script>
-            <script src="assets/js/main.js"></script>
-            <link href="assets/css/aos.css" rel="stylesheet">
-            <script src="assets/js/aos.js"></script>
-            <script>
-                AOS.init({
-                    easing: "ease-out",
-                    duration: 800,
-                });
-            </script>
-            </body>
-        </html>
+        <!-- Scripts -->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/main.js"></script>
+        <link href="assets/css/aos.css" rel="stylesheet">
+        <script src="assets/js/aos.js"></script>
+        <script>
+            AOS.init({
+                easing: "ease-out",
+                duration: 800,
+            });
+        </script>
+    </body>
+</html>
