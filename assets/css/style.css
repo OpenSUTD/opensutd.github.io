@@ -143,6 +143,13 @@ html {
     text-transform: uppercase;
     font-size: 1.2rem;
     letter-spacing: 1.5px;
+    margin-bottom: 0.1em !important;
+}
+
+.main-content .seperator-text {
+    color: #5c4343;
+    font-size: 0.9rem;
+    margin-bottom: 1.5em;
 }
 
 .main-content .resource-title {
