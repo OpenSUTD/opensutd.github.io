@@ -138,6 +138,19 @@ html {
     padding-bottom: 30px;
 }
 
+.main-content .resource-title {
+    color: #5c4343;
+    text-transform: uppercase;
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+}
+
+.main-content .resource-div {
+    text-align: middle;
+    box-shadow: 0 0 4px;
+    margin: 20px;
+}
+
 .footer {
     bottom: 0;
     width: 100vw;
