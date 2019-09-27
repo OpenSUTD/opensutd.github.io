@@ -8,7 +8,8 @@
         <link rel="shortcut icon" href="images/favicon.ico">
         <title>OpenSUTD - People Page</title>
         <meta name="description" content="This is our story." />
-        <link rel="stylesheet" href="assets/css/bulma.min.css" integrity="sha256-vK3UTo/8wHbaUn+dTQD0X6dzidqc5l7gczvH+Bnowwk=" crossorigin="anonymous" />
+        <!-- <link rel="stylesheet" href="assets/css/bulma.min.css" integrity="sha256-vK3UTo/8wHbaUn+dTQD0X6dzidqc5l7gczvH+Bnowwk=" crossorigin="anonymous" /> -->
+        <link rel="stylesheet" href="assets/css/bulma.min.css" />
         <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
         <link rel="stylesheet" href="assets/css/font-awesome-animation.min.css">
         <script src="assets/js/2828f7885a.js" integrity="sha384-WAsFbnLEQcpCk8lM1UTWesAf5rGTCvb2Y+8LvyjAAcxK1c3s5c0L+SYOgxvc6PWG" crossorigin="anonymous"></script>
@@ -39,7 +40,33 @@
         </div>
 
         <!-- Main Content -->
+        <div class="hero-head">
+            <nav class="navbar is-fixed-top">
+                <div class="container">
+                    <div class="navbar-brand is-centered">
+                        <span class="navbar-burger burger" data-target="navbarMenu">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </span>
+                    </div>
+                    <div id="navbarMenu" class="navbar-menu">
+                        <div class="navbar-end" style="margin: auto">
+                            <div class="tabs is-centered">
+                                <ul>
+                                    <li class="is-active"><a href="#home">Home</a></li>
+                                    <li><a href="#events">Events</a></li>
+                                    <li><a href="#course_notes">Course Notes</a></li>
+                                    <li><a href="#team">Team</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
         <div class="main-content">
+            <a class="anchor" id="home"></a>
             <div class="section-light profile" id="profile">
                 <div class="container">
                     <div class="column is-12 about-me">
@@ -254,8 +281,35 @@
                     </div>
                 </div>
             </div>
+            <div class="section-dark profile">
+                <a class="anchor" name="events" id="events"> </a>
+                <div class="container">
+                    <div class="column is-12 about-me">
+                        <h1 class="title has-text-centered section-title">EVENTS</h1>
+                    </div>
+                    <div class="columns is-multiline">
+                        <div class="column is-6 left-image" data-aos="fade-right">
+                            fade rightttttt
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="section-light profile">
+                <a class="anchor" id="course_notes"></a>
+                <div class="container">
+                    <div class="column is-12 about-me">
+                        <h1 class="title has-text-centered section-title">COURSE NOTES</h1>
+                    </div>
+                    <div class="columns is-multiline">
+                        <div class="column is-6 left-image" data-aos="fade-right">
+                            fade rightttttt
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             <div class="section-dark profile" id="profile">
+                <a class="anchor" id="team"></a>
                 <div class="container">
                     <div class="column is-12 about-me">
                         <h1 class="title has-text-centered section-title">Hum Qing Ze</h1>
@@ -273,9 +327,7 @@
                              data-aos="fade-left"
                              >
                             <p class="is-larger">
-                                <strong
-                                        >Qing Ze is one of our main contributors.</strong
-                                    >
+                                <strong>Qing Ze is one of our main contributors.</strong>
                             </p>
                             <br />
                             <p>
@@ -676,17 +728,18 @@
                     </div>
                 </div>
             </div>
+        </footer>
 
-            <!-- Scripts -->
-            <script src="assets/js/jquery.min.js"></script>
-            <script src="assets/js/main.js"></script>
-            <link href="assets/css/aos.css" rel="stylesheet">
-            <script src="assets/js/aos.js"></script>
-            <script>
-                AOS.init({
-                    easing: "ease-out",
-                    duration: 800,
-                });
-            </script>
-            </body>
-        </html>
+        <!-- Scripts -->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/main.js"></script>
+        <link href="assets/css/aos.css" rel="stylesheet">
+        <script src="assets/js/aos.js"></script>
+        <script>
+            AOS.init({
+                easing: "ease-out",
+                duration: 800,
+            });
+        </script>
+    </body>
+</html>
