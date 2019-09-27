@@ -237,3 +237,9 @@ footer li:before {
     50% { opacity: .1; } 
     100% { opacity: 1; }
 }
+a.anchor {
+    display: block;
+    position: relative;
+    top: -50px;
+    visibility: hidden;
+}
