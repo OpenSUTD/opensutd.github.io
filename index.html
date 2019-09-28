@@ -71,39 +71,48 @@
                         <h1 class="title has-text-centered section-title">Welcome to OpenSUTD!</h1>
                     </div>
                     <div class="columns is-multiline">
-                        <div
-                             class="column is-6 has-vertically-aligned-content"
-                             data-aos="fade-right"
-                             >
-                            <p class="is-larger">
-                                <strong
-                                        >The OpenSUTD movement was formed with the desire to build an open community in SUTD where anyone can contribute in a decentralized manner.</strong
-                                    >
+                        <div class="column is-full has-vertically-aligned-content" data-aos="fade-right">
+                            <p class="has-text-centered"><a href="https://github.com/opensutd" target="_blank" style="color:black; margin-right:0.2em;"><i class="fab fa-github fa-2x"></i></a></p>
+                            <br>
+                            <p class="is-family-monospace">
+                            “Ultimately, you can make it (SUTD) about the reason you came here in the first place. I mean that’s really all you can do, right? You just have to say to yourselves: I came here for this, and I’m gonna make it this thing, and no matter how many obstacles they put in my way, I’m just gonna keep trying to make it this thing.” ~ <a href="https://www.facebook.com/groups/522995557746987/?ref=group_header" target="_blank">Tara</a>
                             </p>
-                            <br />
-                            <div class="is-divider"></div>
-                            <div class="columns profile-links">
-                                <div class="column">
-                                    <p class="heading">
-                                        <strong>Origin Story</strong>
-                                    </p>
-                                    <p class="subheading">
-                                        <a href="https://hackmd.io/J4GmoWKrSA62X93c32s-tQ">https://hackmd.io/J4GmoWKrSA62X93c32s-tQ</a>
-                                    </p>
+                            <br>
+                            <p>
+                            The OpenSUTD movement was formed with the desire to build a community in SUTD where anyone can contribute in a decentralized manner. It's an organic movement to embrace open sharing and collaboration modelled after the idea of an <a href="https://opensource.com/open-organization/resources/open-org-definition" target="_blank">Open Organisation</a>.
+                            <br>
+                            This journey started in 2018! Read about our <a href="https://hackmd.io/J4GmoWKrSA62X93c32s-tQ" target="_blank">Origin Story</a>.
+                            <br>
+                            <strong>OpenSUTD is not a fifth row where there is the notion of a member vs non-member. The only thing we recognise is contributions, and anyone can contribute. Contribution is not limited to code.</strong>
+                            </p>
+                        </div>
+                            <div class="column is-full has-text-centered right-image" data-aos="fade-left">
+                                    <img
+                                         class="is-rounded"
+                                         src="https://github.com/opensutd.png"
+                                         alt=""
+                                         width = "250em"
+                                         />
                                 </div>
                             </div>
-                            <div class="is-divider"></div>
-                            <div class="columns profile-links">
-                                <div class="column">
-                                    <p class="heading">
-                                        <strong>GitHub</strong>
-                                    </p>
-                                    <p class="subheading">
-                                        <a href="https://github.com/opensutd">https://github.com/opensutd</a>
-                                    </p>
-                                </div>
+                            <style>
+                                @media screen and (max-width: 600px) {
+                                #git_graph {
+                                    visibility: hidden;
+                                    clear: both;
+                                    float: left;
+                                    margin: 10px auto 5px 20px;
+                                    width: 28%;
+                                    display: none;
+                                }
+                                }
+                            </style>
+                            <div id="git_graph" class="column is-full">
+                                <h1 class="title has-text-centered section-title">TIMELINE</h1>
+                                <p>You can click on each "commit" to check out the links! OpenSUTD can be broadly categorised into just 3 main activities. We develop and maintain resources, work on projects and hold events</p>
+                                <div id="graph-container-main"></div>
                             </div>
-                            <div id="graph-container-main"></div>
+                        </div>
                             <script>
                                 let width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
                                 let mode = "extended";
@@ -130,12 +139,20 @@
                                             mode: mode,
                                             orientation: 'vertical-reverse',
                                         });
-                                        var OpenSUTD = gitgraph.branch("OpenSUTD");
-                                        OpenSUTD
-                                            .commit("Joel's GitHub prototype")
-                                            .commit("OpenSUTD workshops");
-                                        OpenSUTD.commit("Establish knowledge democracy");
-                                        OpenSUTD.tag("Community Docs");
+                                        var OpenSUTD = gitgraph.branch("Resources");
+                                        OpenSUTD.commit({
+                                            subject: "Joel's prototype",
+                                            onClick(commit) {
+                                                window.open("https://github.com/OpenSUTD/course-materials");
+                                            },
+                                            onMouseOver(commit) {
+                                                document.body.style.cursor = "pointer";
+                                            },
+                                            onMouseOut(commit) {
+                                                document.body.style.cursor = "default";
+                                            },
+                                        });
+
                                         OpenSUTD.commit({
                                             subject: "Academic notes",
                                             onClick(commit) {
@@ -149,7 +166,7 @@
                                             },
                                         });
                                         OpenSUTD.commit({
-                                            subject: "SAC policy documents",
+                                            subject: "Open SAC Policies",
                                             onClick(commit) {
                                                 window.open("https://github.com/OpenSUTD/SAC-student-rules");
                                             },
@@ -161,7 +178,7 @@
                                             },
                                         });
                                         OpenSUTD.commit({
-                                            subject: "Publish Fifth Row guides",
+                                            subject: "Fifth Row guides",
                                             onClick(commit) {
                                                 window.open("https://github.com/OpenSUTD/fifth-row-guides");
                                             },
@@ -172,7 +189,6 @@
                                                 document.body.style.cursor = "default";
                                             },
                                         });
-                                        OpenSUTD.commit("Establish open regulation");
                                         var Web_Artefacts = gitgraph.branch({
                                             name: "Web Artefacts",
                                             from: OpenSUTD,
@@ -205,7 +221,6 @@
                                                 document.body.style.cursor = "default";
                                             },
                                         });
-                                        Events.tag("Discovery Week");
                                         Events.commit({
                                             subject: "SUTD Unfiltered 2019",
                                             onClick(commit) {
@@ -219,10 +234,10 @@
                                             },
                                         });
                                         Web_Artefacts.commit("SUTD Calendar");
+                                        OpenSUTD.merge(Events);
                                         Web_Artefacts.commit("People Page");
                                         OpenSUTD.merge(Web_Artefacts);
-                                        OpenSUTD.merge(Events);
-                                        graphContainer.style.transform = "scale(0.85, 0.85) translate(-8%, 10%)";
+                                        graphContainer.style.transform = "scale(0.85, 0.85) translate(20%, 0%)";
                                     } catch(e){
                                         console.log(e);
                                     }
@@ -268,18 +283,6 @@
                                 createGitgraph();
                                 window.onresize = checkForResize;
                             </script>
-                        </div>
-                        <div class="column is-6 right-image" data-aos="fade-left">
-                            <img
-                                 class="is-rounded"
-                                 src="https://github.com/opensutd.png"
-                                 alt=""
-                                 width = "250em"
-                                 />
-                        </div>
-                    </div>
-                </div>
-            </div>
             <div class="section-dark profile">
                 <a class="anchor" name="events" id="events"> </a>
                 <div class="container">
