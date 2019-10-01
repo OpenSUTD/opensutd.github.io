@@ -83,206 +83,27 @@
                             <br>
                             This journey started in 2018! Read about our <a href="https://hackmd.io/J4GmoWKrSA62X93c32s-tQ" target="_blank">Origin Story</a>.
                             <br>
+                            To ensure that everyone can participate, we minimise barriers to entry to working with us. When we say transparency, <a href="https://github.com/OpenSUTD/community/blob/master/Vault_200/OK.md" target="_blank">we mean it</a>
+                            <br>
                             <strong>OpenSUTD is not a fifth row where there is the notion of a member vs non-member. The only thing we recognise is contributions, and anyone can contribute. Contribution is not limited to code.</strong>
                             </p>
                         </div>
-                            <div class="column is-full has-text-centered right-image" data-aos="fade-left">
-                                    <img
-                                         class="is-rounded"
-                                         src="https://github.com/opensutd.png"
-                                         alt=""
-                                         width = "250em"
-                                         />
-                                </div>
-                            </div>
-                            <style>
-                                @media screen and (max-width: 600px) {
-                                #git_graph {
-                                    visibility: hidden;
-                                    clear: both;
-                                    float: left;
-                                    margin: 10px auto 5px 20px;
-                                    width: 28%;
-                                    display: none;
-                                }
-                                }
-                            </style>
-                            <div id="git_graph" class="column is-full">
-                                <h1 class="title has-text-centered section-title">TIMELINE</h1>
-                                <p>You can click on each "commit" to check out the links! OpenSUTD can be broadly categorised into just 3 main activities. We develop and maintain resources, work on projects and hold events</p>
-                                <div id="graph-container-main"></div>
-                            </div>
+                        <div class="column is-full has-text-centered right-image" data-aos="fade-left">
+                                <img
+                                        class="is-rounded"
+                                        src="https://github.com/opensutd.png"
+                                        alt=""
+                                        width = "250em"
+                                        />
                         </div>
-                            <script>
-                                let width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-                                let mode = "extended";
-                                const gitgraphID = "graph-container-main";
-
-                                if (width <= 660) {
-                                    mode = "compact";
-                                }
-
-                                async function createGitgraph(){
-                                    try{
-                                        var graphContainer = document.getElementById(gitgraphID);
-                                        var customTemplate = GitgraphJS.templateExtend(GitgraphJS.TemplateName.Metro, {
-                                            colors: ['#000000', '#CF0000', '#6963FF', '#47E8D4', "#6BDB52", "#E84BA5", "#FFA657"],
-                                            commit: {
-                                                message: {
-                                                    displayAuthor: false,
-                                                    displayHash: false,
-                                                },
-                                            },
-                                        });
-                                        var gitgraph = GitgraphJS.createGitgraph(graphContainer, {
-                                            template: customTemplate,
-                                            mode: mode,
-                                            orientation: 'vertical-reverse',
-                                        });
-                                        var OpenSUTD = gitgraph.branch("Resources");
-                                        OpenSUTD.commit({
-                                            subject: "Joel's prototype",
-                                            onClick(commit) {
-                                                window.open("https://github.com/OpenSUTD/course-materials");
-                                            },
-                                            onMouseOver(commit) {
-                                                document.body.style.cursor = "pointer";
-                                            },
-                                            onMouseOut(commit) {
-                                                document.body.style.cursor = "default";
-                                            },
-                                        });
-
-                                        OpenSUTD.commit({
-                                            subject: "Academic notes",
-                                            onClick(commit) {
-                                                window.open("https://github.com/OpenSUTD/course-notes");
-                                            },
-                                            onMouseOver(commit) {
-                                                document.body.style.cursor = "pointer";
-                                            },
-                                            onMouseOut(commit) {
-                                                document.body.style.cursor = "default";
-                                            },
-                                        });
-                                        OpenSUTD.commit({
-                                            subject: "Open SAC Policies",
-                                            onClick(commit) {
-                                                window.open("https://github.com/OpenSUTD/SAC-student-rules");
-                                            },
-                                            onMouseOver(commit) {
-                                                document.body.style.cursor = "pointer";
-                                            },
-                                            onMouseOut(commit) {
-                                                document.body.style.cursor = "default";
-                                            },
-                                        });
-                                        OpenSUTD.commit({
-                                            subject: "Fifth Row guides",
-                                            onClick(commit) {
-                                                window.open("https://github.com/OpenSUTD/fifth-row-guides");
-                                            },
-                                            onMouseOver(commit) {
-                                                document.body.style.cursor = "pointer";
-                                            },
-                                            onMouseOut(commit) {
-                                                document.body.style.cursor = "default";
-                                            },
-                                        });
-                                        var Web_Artefacts = gitgraph.branch({
-                                            name: "Web Artefacts",
-                                            from: OpenSUTD,
-                                        });
-                                        var Events = gitgraph.branch({
-                                            name: "Events",
-                                            from: OpenSUTD,
-                                        });
-                                        OpenSUTD.commit({
-                                            subject: "Publish coding notes",
-                                            onClick(commit) {
-                                                window.open("https://github.com/OpenSUTD/coding-notes");
-                                            },
-                                            onMouseOver(commit) {
-                                                document.body.style.cursor = "pointer";
-                                            },
-                                            onMouseOut(commit) {
-                                                document.body.style.cursor = "default";
-                                            },
-                                        });
-                                        Events.commit({
-                                            subject: "DiscoverSUTD 2019",
-                                            onClick(commit) {
-                                                window.open("https://discover.sutd.dev/");
-                                            },
-                                            onMouseOver(commit) {
-                                                document.body.style.cursor = "pointer";
-                                            },
-                                            onMouseOut(commit) {
-                                                document.body.style.cursor = "default";
-                                            },
-                                        });
-                                        Events.commit({
-                                            subject: "SUTD Unfiltered 2019",
-                                            onClick(commit) {
-                                                window.open("https://unfiltered.opensutd.org/");
-                                            },
-                                            onMouseOver(commit) {
-                                                document.body.style.cursor = "pointer";
-                                            },
-                                            onMouseOut(commit) {
-                                                document.body.style.cursor = "default";
-                                            },
-                                        });
-                                        Web_Artefacts.commit("SUTD Calendar");
-                                        OpenSUTD.merge(Events);
-                                        Web_Artefacts.commit("People Page");
-                                        OpenSUTD.merge(Web_Artefacts);
-                                        graphContainer.style.transform = "scale(0.85, 0.85) translate(20%, 0%)";
-                                    } catch(e){
-                                        console.log(e);
-                                    }
-                                }
-
-                                async function deleteGitgraph(){
-                                    try{
-                                        oldGitgraph = document.getElementById(gitgraphID);
-                                        while (oldGitgraph.firstChild){
-                                            oldGitgraph.removeChild(oldGitgraph.firstChild);
-                                        }
-                                    } catch(e){
-                                        console.log(e);
-                                    }
-                                }
-
-                                async function checkForResize(){
-                                    try{
-                                        console.log("checkForResize triggered");
-                                        let newMode = "extended";
-                                        width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-
-                                        if (width <= 660) {
-                                            newMode = "compact";
-                                        }
-
-                                        console.log(`width: ${width}; mode: ${mode}; newMode: ${newMode}`);
-
-                                        if (newMode !== mode){
-                                            if (newMode === "compact"){
-                                                mode = "compact";
-                                            } else{
-                                                mode = "extended";
-                                            }
-                                            deleteGitgraph();
-                                            createGitgraph();
-                                        }
-                                    } catch(e){
-                                        console.log(e);
-                                    }
-                                }
-
-                                createGitgraph();
-                                window.onresize = checkForResize;
-                            </script>
+                        <div id="git_graph" class="column is-full">
+                            <h1 class="title has-text-centered section-title">TIMELINE</h1>
+                            <p>You can click on each "commit" to check out the links! OpenSUTD can be broadly categorised into just 3 main activities. We develop and maintain resources, work on projects and hold events</p>
+                            <div id="graph-container-main"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="section-dark profile">
                 <a class="anchor" name="events" id="events"> </a>
                 <div class="container">
@@ -628,23 +449,6 @@
                             }
                         </script>   
                     </div> -->
-                        
-        <noscript>
-            <style type="text/css">
-                .main-content {display:none;}
-            </style>
-            <div class="section-light profile" id="profile">
-                <div class="container">
-                    <div class="column is-12 about-me">
-                        <h1 class="title has-text-centered section-title">...And you won't know our story since JavaScript is disabled for you. A fascinating chap, aren't you? Trust me, you wouldn't want to miss out on all the fun. 😉</h1>
-                        <h1 class="title has-text-right section-title">- <a href="https://github.com/jamestiotio">@jamestiotio</a></h1>
-                    </div>
-                    <br />
-                    <br />
-                </div>
-            </div>
-        </noscript>
-
         <!-- Footer -->
         <footer class="footer">
             <div class="container">
@@ -665,7 +469,21 @@
                 </div>
             </div>
         </footer>
-
+        <noscript>
+            <style type="text/css">
+                .main-content {display:none;}
+            </style>
+            <div class="section-light profile" id="profile">
+                <div class="container">
+                    <div class="column is-12 about-me">
+                        <h1 class="title has-text-centered section-title">...And you won't know our story since JavaScript is disabled for you. A fascinating chap, aren't you? Trust me, you wouldn't want to miss out on all the fun. 😉</h1>
+                        <h1 class="title has-text-right section-title">- <a href="https://github.com/jamestiotio">@jamestiotio</a></h1>
+                    </div>
+                    <br />
+                    <br />
+                </div>
+            </div>
+        </noscript>
         <!-- Scripts -->
         <script src="assets/js/jquery.min.js"></script>
         <script src="assets/js/main.js"></script>
@@ -676,6 +494,188 @@
                 easing: "ease-out",
                 duration: 800,
             });
+        </script>
+        <style>
+            @media screen and (max-width: 600px) {
+            #git_graph {
+                visibility: hidden;
+                clear: both;
+                float: left;
+                margin: 10px auto 5px 20px;
+                width: 28%;
+                display: none;
+            }
+            }
+        </style>
+        <script>
+            let width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+            let mode = "extended";
+            const gitgraphID = "graph-container-main";
+
+            if (width <= 660) {
+                mode = "compact";
+            }
+
+            async function createGitgraph(){
+                try{
+                    var graphContainer = document.getElementById(gitgraphID);
+                    var customTemplate = GitgraphJS.templateExtend(GitgraphJS.TemplateName.Metro, {
+                        colors: ['#000000', '#CF0000', '#6963FF', '#47E8D4', "#6BDB52", "#E84BA5", "#FFA657"],
+                        commit: {
+                            message: {
+                                displayAuthor: false,
+                                displayHash: false,
+                            },
+                        },
+                    });
+                    var gitgraph = GitgraphJS.createGitgraph(graphContainer, {
+                        template: customTemplate,
+                        mode: mode,
+                        orientation: 'vertical-reverse',
+                    });
+                    var OpenSUTD = gitgraph.branch("Resources");
+                    OpenSUTD.commit({
+                        subject: "Joel's prototype",
+                        onClick(commit) {
+                            window.open("https://github.com/OpenSUTD/course-materials");
+                        },
+                        onMouseOver(commit) {
+                            document.body.style.cursor = "pointer";
+                        },
+                        onMouseOut(commit) {
+                            document.body.style.cursor = "default";
+                        },
+                    });
+
+                    OpenSUTD.commit({
+                        subject: "Academic notes",
+                        onClick(commit) {
+                            window.open("https://github.com/OpenSUTD/course-notes");
+                        },
+                        onMouseOver(commit) {
+                            document.body.style.cursor = "pointer";
+                        },
+                        onMouseOut(commit) {
+                            document.body.style.cursor = "default";
+                        },
+                    });
+                    OpenSUTD.commit({
+                        subject: "Open SAC Policies",
+                        onClick(commit) {
+                            window.open("https://github.com/OpenSUTD/SAC-student-rules");
+                        },
+                        onMouseOver(commit) {
+                            document.body.style.cursor = "pointer";
+                        },
+                        onMouseOut(commit) {
+                            document.body.style.cursor = "default";
+                        },
+                    });
+                    OpenSUTD.commit({
+                        subject: "Fifth Row guides",
+                        onClick(commit) {
+                            window.open("https://github.com/OpenSUTD/fifth-row-guides");
+                        },
+                        onMouseOver(commit) {
+                            document.body.style.cursor = "pointer";
+                        },
+                        onMouseOut(commit) {
+                            document.body.style.cursor = "default";
+                        },
+                    });
+                    var Web_Artefacts = gitgraph.branch({
+                        name: "Web Artefacts",
+                        from: OpenSUTD,
+                    });
+                    var Events = gitgraph.branch({
+                        name: "Events",
+                        from: OpenSUTD,
+                    });
+                    OpenSUTD.commit({
+                        subject: "Publish coding notes",
+                        onClick(commit) {
+                            window.open("https://github.com/OpenSUTD/coding-notes");
+                        },
+                        onMouseOver(commit) {
+                            document.body.style.cursor = "pointer";
+                        },
+                        onMouseOut(commit) {
+                            document.body.style.cursor = "default";
+                        },
+                    });
+                    Events.commit({
+                        subject: "DiscoverSUTD 2019",
+                        onClick(commit) {
+                            window.open("https://discover.sutd.dev/");
+                        },
+                        onMouseOver(commit) {
+                            document.body.style.cursor = "pointer";
+                        },
+                        onMouseOut(commit) {
+                            document.body.style.cursor = "default";
+                        },
+                    });
+                    Events.commit({
+                        subject: "SUTD Unfiltered 2019",
+                        onClick(commit) {
+                            window.open("https://unfiltered.opensutd.org/");
+                        },
+                        onMouseOver(commit) {
+                            document.body.style.cursor = "pointer";
+                        },
+                        onMouseOut(commit) {
+                            document.body.style.cursor = "default";
+                        },
+                    });
+                    Web_Artefacts.commit("SUTD Calendar");
+                    OpenSUTD.merge(Events);
+                    Web_Artefacts.commit("People Page");
+                    OpenSUTD.merge(Web_Artefacts);
+                    graphContainer.style.transform = "scale(0.85, 0.85) translate(20%, 0%)";
+                } catch(e){
+                    console.log(e);
+                }
+            }
+
+            async function deleteGitgraph(){
+                try{
+                    oldGitgraph = document.getElementById(gitgraphID);
+                    while (oldGitgraph.firstChild){
+                        oldGitgraph.removeChild(oldGitgraph.firstChild);
+                    }
+                } catch(e){
+                    console.log(e);
+                }
+            }
+
+            async function checkForResize(){
+                try{
+                    console.log("checkForResize triggered");
+                    let newMode = "extended";
+                    width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+
+                    if (width <= 660) {
+                        newMode = "compact";
+                    }
+
+                    console.log(`width: ${width}; mode: ${mode}; newMode: ${newMode}`);
+
+                    if (newMode !== mode){
+                        if (newMode === "compact"){
+                            mode = "compact";
+                        } else{
+                            mode = "extended";
+                        }
+                        deleteGitgraph();
+                        createGitgraph();
+                    }
+                } catch(e){
+                    console.log(e);
+                }
+            }
+
+            createGitgraph();
+            window.onresize = checkForResize;
         </script>
     </body>
 </html>
