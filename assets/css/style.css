@@ -1,246 +1,276 @@
 @import url("https://fonts.googleapis.com/css?family=Lato|Poppins|Kaushan+Script");
+
 .has-vertically-aligned-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html {
-    font-family: 'Poppins', Lato, Tahoma, sans-serif;
-    width: 100%;
-    min-height: 100%;
+  font-family: 'Poppins', Lato, Tahoma, sans-serif;
+  width: 100%;
+  min-height: 100%;
 }
 
 .header-wrapper {
-    padding-bottom: 30px;
+  padding-bottom: 30px;
 }
 
 .hero {
-    background: rgba(0, 0, 0, 1);
-    background-attachment: fixed;
-    background-size: cover;
-    color: white;
-    box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-    font-family: 'Poppins', sans-serif;
+  background: rgba(0, 0, 0, 1);
+  background-attachment: fixed;
+  background-size: cover;
+  color: white;
+  box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  font-family: 'Poppins', sans-serif;
 }
 
 .hero .title {
-    font-family: 'Kaushan Script', sans-serif;
-    transform: rotate(-5deg);
-    font-size: 5rem;
-    color: whitesmoke;
+  font-family: 'Kaushan Script', sans-serif;
+  transform: rotate(-5deg);
+  font-size: 5rem;
+  color: whitesmoke;
 }
 
 @media (max-width: 510px) {
-    .hero .title {
-        font-family: 'Kaushan Script', sans-serif;
-        transform: rotate(-5deg);
-        font-size: 2.5rem;
-        color: whitesmoke;
-    }
+  .hero .title {
+    font-family: 'Kaushan Script', sans-serif;
+    transform: rotate(-5deg);
+    font-size: 2.5rem;
+    color: whitesmoke;
+  }
 }
 
 .hero .subtitle {
-    padding: 40px;
-    color: whitesmoke;
+  padding: 40px;
+  color: whitesmoke;
 }
 
 .hero .description {
-    padding-top: 50px;
-    font-size: 1.7rem;
-    text-transform: uppercase;
+  padding-top: 50px;
+  font-size: 1.7rem;
+  text-transform: uppercase;
 }
 
 .main-content {
-    padding-top: 2rem;
-    color: #3c4172;
-    font-family: 'Poppins', sans-serif;
+  padding-top: 2rem;
+  color: #3c4172;
+  font-family: 'Poppins', sans-serif;
 }
 
 .main-content .section-dark {
-    background-color: #f5f0f0;
-    padding: 30px;
+  background-color: #f5f0f0;
+  padding: 30px;
 }
 
 .main-content .section-dark.profile {
-    padding-bottom: 100px;
+  padding-bottom: 100px;
 }
 
 .main-content .section-dark.profile .is-larger {
-    font-size: 1.2rem;
-    text-align: justify;
+  font-size: 1.2rem;
+  text-align: justify;
 }
 
 .main-content .section-light {
-    padding: 30px;
+  padding: 30px;
 }
 
 .main-content .section-light.profile {
-    padding-bottom: 100px;
+  padding-bottom: 100px;
 }
 
 .main-content .section-light.profile .is-larger {
-    font-size: 1.2rem;
-    text-align: justify;
+  font-size: 1.2rem;
+  text-align: justify;
 }
 
 @media (max-width: 599px) {
-    .main-content .section-light.profile .profile-links {
-        text-align: center;
-    }
+  .main-content .section-light.profile .profile-links {
+    text-align: center;
+  }
 }
 
 @media (max-width: 599px) {
-    .main-content .section-dark.profile .profile-links {
-        text-align: center;
-    }
+  .main-content .section-dark.profile .profile-links {
+    text-align: center;
+  }
 }
 
 .main-content .section-light.profile .right-image img {
-    border-radius: 11px;
-    margin: 20px;
-    box-shadow: 0 5px 20px rgba(14, 25, 80, 0.3);
+  border-radius: 11px;
+  margin: 20px;
+  box-shadow: 0 5px 20px rgba(14, 25, 80, 0.3);
 }
 
 @media (max-width: 599px) {
-    .main-content .section-light.profile .right-image img {
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        width: 85%;
-    }
+  .main-content .section-light.profile .right-image img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 85%;
+  }
 }
 
 .main-content .section-dark.profile .left-image img {
-    border-radius: 1px;
-    margin: 1px;
-    box-shadow: 0 5px 20px rgba(14, 25, 80, 0.3);
+  border-radius: 1px;
+  margin: 1px;
+  box-shadow: 0 5px 20px rgba(14, 25, 80, 0.3);
 }
 
 @media (max-width: 599px) {
-    .main-content .section-dark.profile .left-image img {
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        width: 85%;
-    }
+  .main-content .section-dark.profile .left-image img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 85%;
+  }
 }
 
 .main-content .section-title {
-    color: #5c4343;
-    text-transform: uppercase;
-    font-size: 1.8rem;
-    letter-spacing: 2px;
-    padding-bottom: 30px;
+  color: #5c4343;
+  text-transform: uppercase;
+  font-size: 1.8rem;
+  letter-spacing: 2px;
+  padding-bottom: 30px;
 }
 
 .main-content .name-title {
-    color: #5c4343;
-    text-transform: uppercase;
-    font-size: 1.2rem;
-    letter-spacing: 1.5px;
-    margin-bottom: 0.1em !important;
+  color: #5c4343;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  letter-spacing: 1.5px;
+  margin-bottom: 0.1em !important;
 }
 
 .main-content .seperator-text {
-    color: #5c4343;
-    font-size: 0.9rem;
-    margin-bottom: 1.5em;
+  color: #5c4343;
+  font-size: 0.9rem;
+  margin-bottom: 1.5em;
 }
 
 .main-content .resource-title {
-    color: #5c4343;
-    text-transform: uppercase;
-    font-size: 1.8rem;
-    letter-spacing: 2px;
+  color: #5c4343;
+  text-transform: uppercase;
+  font-size: 1.8rem;
+  letter-spacing: 2px;
 }
 
 .main-content .resource-div {
-    text-align: middle;
-    box-shadow: 0 0 4px;
-    margin: 20px;
+  text-align: middle;
+  box-shadow: 0 0 4px;
+  margin: 20px;
 }
 
 .footer {
-    bottom: 0;
-    width: 100vw;
-    padding: 0;
-    height: 120px;
-    line-height: 25px;
-    text-align: center;
-    background: #9b1c31;
-    color: whitesmoke;
-    padding-top: 2rem;
+  bottom: 0;
+  width: 100vw;
+  padding: 0;
+  height: 120px;
+  line-height: 25px;
+  text-align: center;
+  background: #9b1c31;
+  color: whitesmoke;
+  padding-top: 2rem;
 }
 
 .footer a {
-    padding: 0rem 1rem 1rem 1rem;
-    color: lightgrey;
+  padding: 0rem 1rem 1rem 1rem;
+  color: lightgrey;
 }
 
 .footer a i {
-    font-size: 1.5rem;
-    padding: 0px 10px;
+  font-size: 1.5rem;
+  padding: 0px 10px;
 }
 
 .footer a .nav-item {
-    color: whitesmoke;
+  color: whitesmoke;
 }
 
 .fa-download {
-    color: #43485c;
+  color: #43485c;
 }
 
 ::-webkit-scrollbar {
-    width: 8px;
-    background-color: rgba(245, 245, 245, 0);
+  width: 8px;
+  background-color: rgba(245, 245, 245, 0);
 }
 
 ::-webkit-scrollbar-thumb {
-    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-    background-color: rgba(87, 15, 27, 0.9);
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: rgba(87, 15, 27, 0.9);
 }
 
 body.white {
-    color:ghostwhite
+  color: ghostwhite
 }
 
 .container {
-    max-width: 900px;
-    background: rgba(0, 0, 0, 0);
+  max-width: 900px;
+  background: rgba(0, 0, 0, 0);
 }
 
 /*adds font awesome stars*/
 footer li:before {
-    content: '\f1b2';
-    font-family: 'FontAwesome';
-    float: left;
-    margin-left: -1.5em;
-    color: #9b1c31;
+  content: '\f1b2';
+  font-family: 'FontAwesome';
+  float: left;
+  margin-left: -1.5em;
+  color: #9b1c31;
 }
-.flashit{
-    color:#A31E35;
-    -webkit-animation: flash linear 1s infinite;
-    animation: flash linear 1s infinite;
+
+.flashit {
+  color: #A31E35;
+  -webkit-animation: flash linear 1s infinite;
+  animation: flash linear 1s infinite;
 }
+
 @-webkit-keyframes flash {
-    0% { opacity: 1; } 
-    50% { opacity: .1; } 
-    100% { opacity: 1; }
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: .1;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
+
 @keyframes flash {
-    0% { opacity: 1; } 
-    50% { opacity: .1; } 
-    100% { opacity: 1; }
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: .1;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
+
 a.anchor {
-    display: block;
-    position: relative;
-    top: -50px;
-    visibility: hidden;
+  display: block;
+  position: relative;
+  top: -50px;
+  visibility: hidden;
+}
+
+a.clickable_anchor {
+  color: unset;
+}
+
+a.clickable_anchor:hover {
+  text-decoration-line: underline;
+  text-decoration-style: dashed;
 }
